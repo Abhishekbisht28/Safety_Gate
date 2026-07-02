@@ -1,0 +1,47 @@
+[
+  {
+    "endpoint": "GET /choutbound-service/v1/manual-push-count",
+    "name": "valid subscriber returns 200 with push_count",
+    "method": "GET",
+    "path": "/choutbound-service/v1/manual-push-count?subscriber_name=abc",
+    "requiresAuth": true,
+    "expectedStatus": 200,
+    "expectedBodyContains": ["push_count"]
+  },
+  {
+    "endpoint": "GET /choutbound-service/v1/manual-push-count",
+    "name": "numeric subscriber_name is rejected with 400",
+    "method": "GET",
+    "path": "/choutbound-service/v1/manual-push-count?subscriber_name=12345",
+    "requiresAuth": true,
+    "expectedStatus": 400,
+    "expectedBodyContains": []
+  },
+  {
+    "endpoint": "GET /choutbound-service/v1/manual-push-count",
+    "name": "missing auth token returns 401",
+    "method": "GET",
+    "path": "/choutbound-service/v1/manual-push-count?subscriber_name=abc",
+    "requiresAuth": false,
+    "expectedStatus": 401,
+    "expectedBodyContains": []
+  },
+  {
+    "endpoint": "POST /choutbound-service/v1/content/draft",
+    "name": "create draft returns 201",
+    "method": "POST",
+    "path": "/choutbound-service/v1/content/draft",
+    "requiresAuth": true,
+    "expectedStatus": 201,
+    "expectedBodyContains": ["draft_id"]
+  },
+  {
+    "endpoint": "GET /choutbound-service/v1/content/list",
+    "name": "list with status filter returns 200",
+    "method": "GET",
+    "path": "/choutbound-service/v1/content/list?status=draft",
+    "requiresAuth": true,
+    "expectedStatus": 200,
+    "expectedBodyContains": ["results"]
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/choutbound-service/v1/manual-push-count": {
+      "get": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "subscriber_name": { "type": "string" }
+                },
+                "required": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "push_count": { "type": "integer" },
+                    "subscriber_name": { "type": "string" },
+                    "last_pushed_at": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

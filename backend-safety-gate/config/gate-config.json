@@ -1,0 +1,20 @@
+{
+  "baseUrl": "https://collegehai-outbound-int.makunaiglobal.ai",
+  "swaggerUrlBase": "https://collegehai-outbound-int.makunaiglobal.ai/api/schema/?format=json",
+  "swaggerUrlHead": "http://localhost:8000/api/schema/?format=json",
+  "autoSyncApisJson": true,
+  "responseTimeHardLimitMs": 800,
+  "responseTimeRegressionTolerancePct": 15.0,
+  "baselineFilePath": "baseline/response-time-baseline.json",
+  "openApiSpecPathBase": "specs/base-openapi.json",
+  "openApiSpecPathHead": "specs/head-openapi.json",
+  "reportOutputPath": "reports/gate-report.html",
+  "failOnFunctionalRegression": true,
+  "failOnSecurityFinding": true,
+  "failOnContractBreak": true,
+  "failOnPerformanceRegression": true,
+  "criticalEndpointPrefixes": [
+    "/choutbound-service/v1/manual-push-count",
+    "/choutbound-service/v1/content"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "apis": [
+    {
+      "method": "GET",
+      "path": "/choutbound-service/v1/manual-push-count",
+      "requiresAuth": true,
+      "sourceFiles": ["views.py", "serializers/push.py", "urls.py"],
+      "queryParams": ["subscriber_name", "manual_push_by"],
+      "ownerParam": "manual_push_by"
+    },
+    {
+      "method": "POST",
+      "path": "/choutbound-service/v1/content/draft",
+      "requiresAuth": true,
+      "sourceFiles": ["views/draft.py", "serializers/draft.py"],
+      "queryParams": []
+    },
+    {
+      "method": "GET",
+      "path": "/choutbound-service/v1/content/list",
+      "requiresAuth": true,
+      "sourceFiles": ["views/content.py"],
+      "queryParams": ["status", "category"]
+    }
+  ]
+}
